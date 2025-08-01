@@ -13,7 +13,11 @@
         <div class="container-fluid">
             <a class="navbar-brand mb-0 h1" href="{{ route('posts.index') }}">The Blog</a>
             <a href="{{ route('posts.create') }}" class="btn btn-success">Create Post</a>
-            {{-- <a href="{{ route('users.show') }}" class="btn btn-success">profile</a> --}}
+            <a href="{{ route('profile.index') }}" class="btn btn-success">profile</a>
+            <form action="{{ route('logout') }}" method="POST" style="display: inline">
+                @csrf
+                <input type="submit" class="btn btn-danger" value="log out">
+            </form>
         </div>
     </nav>
     @yield('content')

@@ -34,7 +34,7 @@ class PostController extends Controller
             'title'=>'required|max:30',
             'description'=>'required',
             'category'=>'max:20',
-            'image'=>'image|mimes:jpg,png,jpeg,gif,svg'
+            'image'=>'image|mimes:jpg,png,jpeg,gif,svg',
         ]); 
         $post = new Post();
         $post->title = $request->title;
@@ -67,7 +67,8 @@ class PostController extends Controller
     {
         $user = $post->user;
         $tags = $post->tags;
-        return view('posts.show',compact('post','user','tags'));
+        $comments = $post->comments;
+        return view('posts.show',compact('post','user','tags','comments'));
     }
 
     /**

@@ -25,7 +25,7 @@
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter password" value="{{ old('password') }}" name="password">
+                    <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -21,7 +21,7 @@ class AuthController extends Controller
         ]);
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('posts.index');
+            return redirect()->intended('');
         }
         return back();
     }
@@ -43,6 +43,10 @@ class AuthController extends Controller
             'bio'=>'default bio',
             'posts'=>0,
         ]);
+        return redirect()->route('login');
+    }
+    public function logout(){
+        Auth::logout();
         return redirect()->route('login');
     }
 }
